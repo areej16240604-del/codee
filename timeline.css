@@ -1,0 +1,233 @@
+/* ============================================
+   TIMELINE.HTML - Light Blue Theme
+   ============================================ */
+
+body {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #f0f9ff 100%);
+    color: #1e293b;
+}
+
+.page-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1e293b;
+    padding-top: 6rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #64748b;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3b82f6, #60a5fa);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+    transform: translateX(50px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-content {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    max-width: 350px;
+    margin: 0 2rem;
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border: 1px solid rgba(147, 197, 253, 0.2);
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #3b82f6;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: calc(50% - 9px);
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: calc(50% - 9px);
+}
+
+.timeline-emoji {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: #3b82f6;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* ---------- Friendship Receipt ---------- */
+.receipt-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
+    font-family: 'Courier New', monospace;
+    position: relative;
+    border: 1px solid rgba(147, 197, 253, 0.2);
+}
+
+.receipt-container::before,
+.receipt-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: 
+        linear-gradient(45deg, transparent 33.33%, #e0f2fe 33.33%, #e0f2fe 66.66%, transparent 66.66%),
+        linear-gradient(-45deg, transparent 33.33%, #e0f2fe 33.33%, #e0f2fe 66.66%, transparent 66.66%);
+    background-size: 20px 40px;
+}
+
+.receipt-container::before {
+    top: -10px;
+}
+
+.receipt-container::after {
+    bottom: -10px;
+    transform: rotate(180deg);
+}
+
+.receipt-header {
+    text-align: center;
+    border-bottom: 2px dashed #3b82f6;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.receipt-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.receipt-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dotted rgba(147, 197, 253, 0.3);
+}
+
+.receipt-label {
+    color: #64748b;
+}
+
+.receipt-value {
+    color: #1e293b;
+    font-weight: bold;
+}
+
+.receipt-total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #3b82f6;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.receipt-footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        padding-left: 50px;
+        padding-right: 0;
+        justify-content: flex-start;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 10px;
+        right: auto;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}

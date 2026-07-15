@@ -1,0 +1,147 @@
+/* ============================================
+   INDEX.HTML - Landing Page Styles (Light Blue)
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #e0f2fe 100%);
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    background-attachment: fixed;
+}
+
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px;
+}
+
+.hero-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(224, 242, 254, 0.9) 0%, rgba(186, 230, 253, 0.85) 100%);
+    z-index: 1;
+}
+
+/* ---------- Birthday Content ---------- */
+.birthday-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.level-up-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    letter-spacing: 1px;
+}
+
+.birthday-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+.nickname-text {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 300;
+}
+
+.greeting {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem 0;
+    opacity: 0.9;
+    color: #475569;
+    font-style: italic;
+    min-height: 25px;
+}
+
+.from-text {
+    font-style: italic;
+    opacity: 0.7;
+    margin: 0.5rem 0 1.5rem 0;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* ---------- ENTER BUTTON ---------- */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s;
+    text-decoration: none;
+    border: 2px solid transparent;
+    animation: pulseButton 2s ease-in-out infinite;
+    position: relative;
+    z-index: 100;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    border-color: #93c5fd;
+    animation: none;
+}
+
+@keyframes pulseButton {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
+    }
+    50% { 
+        transform: scale(1.05); 
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .birthday-content h1 { font-size: 2.2rem; }
+    .nickname-text { font-size: 1rem; letter-spacing: 2px; }
+    .greeting { font-size: 1rem; }
+}

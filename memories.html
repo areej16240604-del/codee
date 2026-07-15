@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories with Shayan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="memories.css">
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="timeline.html" class="back-btn" title="Go Back">←</a>
+
+    <h1 class="page-title">Memories with Shayan</h1>
+    <p class="page-subtitle">Every moment with you is worth remembering</p>
+
+    <div class="gallery">
+
+        <!-- ===== PHOTOS ===== -->
+        <div class="gallery-item">
+            <img src="imgphoto-1.jpg" alt="Memory 1" loading="lazy">
+            <div class="gallery-caption">
+                <div class="gallery-date">Mountain Views</div>
+                <div>Shayan exploring the mountains. You radiate positivity wherever you go.</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="imgphoto-2.jpg" alt="Memory 2" loading="lazy">
+            <div class="gallery-caption">
+                <div class="gallery-date">Winter Trip</div>
+                <div>That unforgettable snowy adventure. Freezing cold but hearts warm with laughter.</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="imgphoto-3.jpg" alt="Memory 3" loading="lazy">
+            <div class="gallery-caption">
+                <div class="gallery-date">University Days</div>
+                <div>From the very beginning — some friendships are just meant to last.</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="imgphoto-4.jpg" alt="Memory 4" loading="lazy">
+            <div class="gallery-caption">
+                <div class="gallery-date">Good Old Days</div>
+                <div>Younger days captured. Look how far we've come since then.</div>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="WhatsApp Image 2026-07-15 at 5.49.14 PM.jpeg" alt="Memory 5" loading="lazy">
+            <div class="gallery-caption">
+                <div class="gallery-date">Mountain Adventure</div>
+                <div>Another epic shot from our adventures. Keep shining, Shayan.</div>
+            </div>
+        </div>
+
+        <!-- ===== VIDEOS ===== -->
+        <div class="gallery-item video-placeholder">
+            <div class="video-fallback" onclick="playVideo(this)">
+                <img src="imgphoto-1.jpg" alt="Video 1 thumbnail" loading="lazy">
+                <div class="play-overlay">▶</div>
+            </div>
+            <video src="videosvideo-1.mp4" controls style="display:none;" preload="none"></video>
+            <div class="gallery-caption">
+                <div class="gallery-date">Funny Moments</div>
+                <div>"Ye kon hai — bachay ko chocolate nhi mili is liye roo raha" — Classic university memories!</div>
+            </div>
+        </div>
+
+        <div class="gallery-item video-placeholder">
+            <div class="video-fallback" onclick="playVideo(this)">
+                <img src="imgphoto-2.jpg" alt="Video 2 thumbnail" loading="lazy">
+                <div class="play-overlay">▶</div>
+            </div>
+            <video src="videosvideo-2.mp4" controls style="display:none;" preload="none"></video>
+            <div class="gallery-caption">
+                <div class="gallery-date">Park Adventures</div>
+                <div>Never too old for a slide! The day everyone acted like kids again.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== FINAL MESSAGE ===== -->
+    <div class="final-message">
+        <h2>To Many More Memories</h2>
+        <p>Every photo tells a story, every video holds a heartbeat.</p>
+        <p>Here's to the memories we've made and the ones still waiting to be captured.</p>
+        <p class="signature-quote">"Allah tumhari zindagi ko hamesha khushiyon se bhar de."</p>
+        <div class="signature">— Your Friend</div>
+        <button class="celebrate-btn" onclick="celebrate()">🎉 Celebrate</button>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="memories.js"></script>
+    <script>
+        // Video play handler
+        function playVideo(container) {
+            const video = container.nextElementSibling;
+            const fallback = container;
+            fallback.style.display = 'none';
+            video.style.display = 'block';
+            video.play();
+        }
+    </script>
+
+</body>
+</html>
